@@ -1,18 +1,24 @@
-/*  your css code here. If applicable */
 body {
-    background-color: white;
-    color: black;
-    transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-body.dark-mode {
-    background-color: #121212;
-    color: white;
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
 }
 
 button {
-    padding: 10px 20px;
-    margin: 20px;
-    cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
+
 

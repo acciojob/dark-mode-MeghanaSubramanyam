@@ -1,18 +1,20 @@
-//your JS code here. If required.
-const toggleBtn = document.getElementById("toggleBtn");
-
-// Load preference from localStorage
-if (localStorage.getItem("darkMode") === "enabled") {
+// Check localStorage on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+  if (isDarkMode) {
     document.body.classList.add("dark-mode");
-}
-
-// Toggle dark mode on button click
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("darkMode", "enabled");
-    } else {
-        localStorage.setItem("darkMode", "disabled");
-    }
+  }
 });
+
+const toggleButton = document.getElementById("toggle-theme");
+
+toggleButton.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark-mode");
+
+  if (isDark) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+});
+
