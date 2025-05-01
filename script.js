@@ -1,20 +1,15 @@
-// Check localStorage on page load
+const toggleButton = document.getElementById("toggle-theme");
+
+// Apply the user's theme preference on page load
 window.addEventListener("DOMContentLoaded", () => {
-  const isDarkMode = localStorage.getItem("darkMode") === "enabled";
-  if (isDarkMode) {
+  if (localStorage.getItem("darkMode") === "enabled") {
     document.body.classList.add("dark-mode");
   }
 });
 
-const toggleButton = document.getElementById("toggle-theme");
-
+// Toggle theme and update localStorage
 toggleButton.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-mode");
-
-  if (isDark) {
-    localStorage.setItem("darkMode", "enabled");
-  } else {
-    localStorage.setItem("darkMode", "disabled");
-  }
+  const isDarkMode = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
 });
 
